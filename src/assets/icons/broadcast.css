@@ -1,0 +1,43 @@
+@keyframes wave1 {
+  0% {
+    opacity: 0;
+  }
+
+  34% {
+    opacity: 0;
+  }
+
+  35% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes wave2 {
+  0% {
+    opacity: 0;
+  }
+
+  66% {
+    opacity: 0;
+  }
+
+  67% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.signal-1 {
+  animation: wave1 3.6s infinite;
+}
+
+.signal-2 {
+  animation: wave2 3.6s infinite;
+}
