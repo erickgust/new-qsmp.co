@@ -188,7 +188,12 @@ interface IconLinkProps
 
 export function IconLink({ icon, colors, size, ...props }: IconLinkProps) {
   return (
-    <a className={button({ colors, intent: 'icon', size })} {...props}>
+    <a
+      {...props}
+      className={button({ colors, intent: 'icon', size })}
+      target='_blank'
+      rel='noopener noreferrer'
+    >
       <span>{icon}</span>
     </a>
   )
