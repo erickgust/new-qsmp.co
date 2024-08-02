@@ -5,7 +5,6 @@ const button = cva(
   [
     'text-base sm:text-xs',
     'font-bold',
-    '[&>span]:py-4 sm:[&>span]:py-2',
     '[&>span]:gap-x-1',
     '[&>span]:inline-flex',
     '[&>span]:items-center',
@@ -22,17 +21,18 @@ const button = cva(
     variants: {
       intent: {
         primary: [
+          '[&>span]:py-4 sm:[&>span]:py-2',
           '[&>span]:px-6 sm:[&>span]:px-4',
           '[&>span]:justify-between',
           'w-full sm:w-auto',
         ],
-        icon: ['[&>span]:p-4', 'sm:[&>span]:px-2'],
+        icon: ['[&>span]:p-4', 'sm:[&>span]:p-2'],
         social: [
           '[&>span]:px-6',
           'sm:[&>span]:px-4',
           '[&>span]:justify-center',
           '[&>span]:gap-x-3 sm:[&>span]:gap-x-2',
-          '[&>span]:py-3.5',
+          '[&>span]:py-3.5 sm:[&>span]:py-2',
         ],
       },
       colors: {
@@ -137,7 +137,7 @@ const button = cva(
       {
         intent: 'icon',
         size: 'large',
-        className: 'max-sm:[&>span]:!py-3.5 [&>span]:px-3.5',
+        className: '[&>span]:py-3.5 [&>span]:px-3.5 sm:[&>span]:p-2',
       },
     ],
   },
