@@ -43,6 +43,13 @@ export function MemberCard() {
           className='object-cover'
           sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
         />
+        <Image
+          alt='BagheraJones Character'
+          src='/baghera-character.jpg'
+          fill
+          className='object-cover opacity-0 hover:opacity-100 transition-opacity'
+          sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+        />
 
         <div className='absolute top-6 left-6 sm:top-4 sm:left-4'>
           <LiveTag>Live</LiveTag>
