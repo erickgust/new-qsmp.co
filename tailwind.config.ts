@@ -28,6 +28,20 @@ const config: Config = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      fontSize: {
+        // 1.625rem = 26px
+        "2.5xl": "1.625rem",
+        // 1.375rem = 22px
+        '1.5xl': '1.375rem',
+      },
+      spacing: {
+        // 14,5rem = 232px
+        60: "14.5rem",
+      },
+      fontFamily: {
+        pixel: ["var(--font-pixeloid-sans)", "sans-serif"],
+        inter: ["var(--font-inter)", "sans-serif"],
+      },
     },
   },
   plugins: [],

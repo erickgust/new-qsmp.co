@@ -1,10 +1,27 @@
 import type { Metadata } from 'next'
 import { DM_Sans } from 'next/font/google'
+import localFont from 'next/font/local'
 import '../globals.css'
 import { getMessages } from 'next-intl/server'
 import { NextIntlClientProvider } from 'next-intl'
+import clsx from 'clsx'
 
 const dmSans = DM_Sans({ subsets: ['latin'] })
+
+const pixeloidSans = localFont({
+  src: [
+    {
+      path: '../../assets/fonts/PixeloidSans.ttf',
+      weight: '400',
+    },
+    {
+      path: '../../assets/fonts/PixeloidSans-Bold.ttf',
+      weight: '700',
+    },
+  ],
+  variable: '--font-pixeloid-sans',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -22,7 +39,7 @@ export default async function RootLayout({
 
   return (
     <html lang={locale}>
-      <body className={dmSans.className}>
+      <body className={clsx(dmSans.className, pixeloidSans.variable)}>
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>
