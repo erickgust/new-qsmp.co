@@ -1,3 +1,4 @@
+import { Heading } from '@/components/Heading'
 import { MemberCard } from '@/components/MemberCard'
 import { useTranslations } from 'next-intl'
 
@@ -6,7 +7,7 @@ export default function Home() {
 
   return (
     <main>
-      <h1>{t('title')}</h1>
+      <Heading>{t('title')}</Heading>
       <MemberCard />
     </main>
   )
