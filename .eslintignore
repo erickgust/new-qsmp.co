@@ -2,5 +2,5 @@
 **/out/*
 **/.next/*
 coverage
-src/styles/globals.css
+src/assets/fonts/*
 *.css
