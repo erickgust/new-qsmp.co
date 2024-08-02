@@ -137,7 +137,7 @@ const button = cva(
       {
         intent: 'icon',
         size: 'large',
-        className: '[&>span]:py-3.5 [&>span]:px-3.5',
+        className: 'max-sm:[&>span]:!py-3.5 [&>span]:px-3.5',
       },
     ],
   },
