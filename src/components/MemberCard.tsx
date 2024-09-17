@@ -2,7 +2,7 @@ import { BroadcastIcon } from '@/assets/icons/Broadcast'
 import clsx from 'clsx'
 import Image from 'next/image'
 import { ComponentProps, ReactNode } from 'react'
-import { IconLink, SocialLink } from './Button'
+import { ChannelLink, IconLink } from './Button'
 import { YoutubeIcon } from '@/assets/icons/socials/Youtube'
 import { TwitterIcon } from '@/assets/icons/socials/Twitter'
 import { TwitchIcon } from '@/assets/icons/socials/Twitch'
@@ -141,7 +141,7 @@ export function MemberCard(props: MemberCardProps) {
             />
           ) : null}
 
-          <SocialLink
+          <ChannelLink
             colors={channel.type}
             className='flex-1 uppercase'
             size='large'
@@ -149,7 +149,7 @@ export function MemberCard(props: MemberCardProps) {
             href={channel.href}
           >
             {channel.type}
-          </SocialLink>
+          </ChannelLink>
         </div>
       </div>
     </article>

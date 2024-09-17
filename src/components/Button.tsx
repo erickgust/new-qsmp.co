@@ -200,13 +200,13 @@ export function IconLink({ icon, colors, size, ...props }: IconLinkProps) {
   )
 }
 
-interface SocialLinkProps
+interface ChannelLinkProps
   extends ComponentProps<'a'>,
     VariantProps<typeof button> {
   icon: React.ReactNode
 }
 
-export function SocialLink({
+export function ChannelLink({
   icon,
   colors,
   size,
@@ -214,7 +214,7 @@ export function SocialLink({
   className,
   href,
   ...props
-}: SocialLinkProps) {
+}: ChannelLinkProps) {
   return (
     <a
       href={href}
