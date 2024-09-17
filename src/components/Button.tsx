@@ -1,3 +1,4 @@
+import { External } from '@/assets/icons/External'
 import { cva, cx, VariantProps } from 'class-variance-authority'
 import { ComponentProps } from 'react'
 
@@ -225,6 +226,40 @@ export function SocialLink({
       <span>
         {icon}
         <span>{children}</span>
+      </span>
+    </a>
+  )
+}
+
+interface SocialLinkProps
+  extends ComponentProps<'a'>,
+    VariantProps<typeof button> {
+  icon: React.ReactNode
+}
+
+export function SocialLink({
+  icon,
+  href,
+  children,
+  className,
+  ...props
+}: SocialLinkProps) {
+  return (
+    <a
+      href={href}
+      {...props}
+      className={cx(
+        button({ colors: 'white', size: 'large', intent: 'social' }),
+        'flex sm:inline-flex',
+        className,
+      )}
+      target='_blank'
+      rel='noopener noreferrer'
+    >
+      <span>
+        {icon}
+        <span>{children}</span>
+        <External className='sm:hidden ml-auto' />
       </span>
     </a>
   )
