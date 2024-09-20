@@ -27,6 +27,7 @@ const config: Config = {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'blue-pattern': "url('/BG_Blue.png')",
       },
       fontSize: {
         // 1.625rem = 26px
@@ -41,6 +42,9 @@ const config: Config = {
       fontFamily: {
         pixel: ["var(--font-pixeloid-sans)", "sans-serif"],
         inter: ["var(--font-inter)", "sans-serif"],
+      },
+      maxWidth: {
+        'screen-lg': '1080px',
       },
     },
   },
