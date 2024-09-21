@@ -16,7 +16,7 @@ const button = cva(
     'sm:[&:hover>span]:-translate-y-1',
     'font-pixel',
     'no-underline',
-    '[&>span]:leading-none',
+    // '[&>span]:leading-none',
     '[&>span]:w-full',
     '[&_svg]:min-w-[1.125rem]',
     '[&_svg]:min-h-[1.125rem]',
