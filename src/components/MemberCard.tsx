@@ -32,7 +32,7 @@ function LiveTag({ children }: { children: ReactNode }) {
   return <Tag className='bg-main-red text-white'>{children}</Tag>
 }
 
-type PlatformType = 'twitch' | 'youtube' | 'twitter'
+type PlatformType = 'twitch' | 'youtube' | 'twitter' | 'naver'
 
 type PlatformInfo = {
   type: PlatformType
