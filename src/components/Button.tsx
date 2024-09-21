@@ -4,6 +4,7 @@ import { ComponentProps } from 'react'
 
 const button = cva(
   [
+    'inline-block',
     'text-base sm:text-xs',
     'font-bold',
     '[&>span]:gap-x-1',
