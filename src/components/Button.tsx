@@ -17,6 +17,8 @@ const button = cva(
     'no-underline',
     '[&>span]:leading-none',
     '[&>span]:w-full',
+    '[&_svg]:min-w-[1.125rem]',
+    '[&_svg]:min-h-[1.125rem]',
   ],
   {
     variants: {
@@ -124,8 +126,8 @@ const button = cva(
       },
       size: {
         large: [
-          '[&_svg]:min-w-[1.375rem] sm:[&_svg]:min-w-[1.125rem]',
-          '[&_svg]:min-h-[1.375rem] sm:[&_svg]:min-h-[1.125rem]',
+          '[&_svg]:min-w-[1.375rem]',
+          '[&_svg]:min-h-[1.375rem]',
           '[&_svg]:size-[1.375rem] sm:[&_svg]:size-[1.125rem]',
         ],
       },
@@ -159,23 +161,13 @@ export function ExternalLink({
     <a
       href={href}
       {...props}
-      className={cx(button({ colors }), className)}
+      className={cx(button({ colors }), 'uppercase', className)}
       target='_blank'
       rel='noopener noreferrer'
     >
       <span>
         {children}
-        <svg
-          xmlns='http://www.w3.org/2000/svg'
-          width='18'
-          height='18'
-          fill='none'
-        >
-          <path
-            fill='currentColor'
-            d='m4.8 13.5-1.05-1.05 7.2-7.2H4.5v-1.5h9v9H12V6.3l-7.2 7.2Z'
-          />
-        </svg>
+        <External width={18} height={18} />
       </span>
     </a>
   )
