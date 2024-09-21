@@ -2,6 +2,8 @@ import { useTranslations } from 'next-intl'
 import { ExternalLink } from '../Button'
 import { YouTubeEmbed } from '@next/third-parties/google'
 import { ComponentProps } from 'react'
+import { Heading } from '../Heading'
+import { Paragraph } from '../Paragraph'
 
 const YoutubeLink = ({
   children,
@@ -24,16 +26,10 @@ export function Updates() {
       <div className='max-w-screen-lg mx-auto flex flex-col md:flex-row sm:items-center'>
         <div className='flex-1 sm:pr-6'>
           <div className='md:max-w-sm lg:max-w-md'>
-            <h1 className='font-pixel text-2.5xl text-balance font-bold uppercase mb-6 md:max-w-sm'>
-              {t('title')}
-            </h1>
+            <Heading className='mb-6 md:max-w-sm'>{t('title')}</Heading>
 
-            <p className='text-base sm:text-sm leading-7 sm:leading-6 text-pretty'>
-              {t('desc-1')}
-            </p>
-            <p className='text-base sm:text-sm leading-7 sm:leading-6 text-pretty mt-2'>
-              {t('desc-2')}
-            </p>
+            <Paragraph>{t('desc-1')}</Paragraph>
+            <Paragraph className='mt-2'>{t('desc-2')}</Paragraph>
 
             <div className='mt-8 max-sm:hidden'>
               <YoutubeLink>{t('button')}</YoutubeLink>
