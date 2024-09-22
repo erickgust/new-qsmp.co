@@ -16,10 +16,8 @@ const button = cva(
     'sm:[&:hover>span]:-translate-y-1',
     'font-pixel',
     'no-underline',
-    // '[&>span]:leading-none',
     '[&>span]:w-full',
-    '[&_svg]:min-w-[1.125rem]',
-    '[&_svg]:min-h-[1.125rem]',
+    '[&_svg]:shrink-0',
   ],
   {
     variants: {
@@ -126,11 +124,7 @@ const button = cva(
         ],
       },
       size: {
-        large: [
-          '[&_svg]:min-w-[1.375rem]',
-          '[&_svg]:min-h-[1.375rem]',
-          '[&_svg]:size-[1.375rem] sm:[&_svg]:size-[1.125rem]',
-        ],
+        large: ['[&_svg]:size-[1.375rem] sm:[&_svg]:size-[1.125rem]'],
       },
     },
     defaultVariants: {
