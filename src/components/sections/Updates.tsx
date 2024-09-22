@@ -4,6 +4,7 @@ import { YouTubeEmbed } from '@next/third-parties/google'
 import { ComponentProps } from 'react'
 import { Heading } from '../Heading'
 import { Paragraph } from '../Paragraph'
+import { Section } from '../Section'
 
 const YoutubeLink = ({
   children,
@@ -22,7 +23,7 @@ export function Updates() {
   const t = useTranslations('updates')
 
   return (
-    <section className='text-white bg-purple-pattern px-8 py-14 sm:py-16'>
+    <Section className='text-white bg-purple-pattern'>
       <div className='max-w-screen-lg mx-auto flex flex-col md:flex-row sm:items-center'>
         <div className='flex-1 sm:pr-6'>
           <div className='md:max-w-sm lg:max-w-md'>
@@ -43,6 +44,6 @@ export function Updates() {
 
         <YoutubeLink className='sm:hidden'>{t('button')}</YoutubeLink>
       </div>
-    </section>
+    </Section>
   )
 }

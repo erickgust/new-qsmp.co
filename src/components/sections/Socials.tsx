@@ -9,12 +9,13 @@ import { TiktokIcon } from '@/assets/icons/socials/Tiktok'
 import { useTranslations } from 'next-intl'
 import { Heading } from '../Heading'
 import { Paragraph } from '../Paragraph'
+import { Section } from '../Section'
 
 export function Socials() {
   const t = useTranslations('socials')
 
   return (
-    <section className='text-white bg-blue-pattern px-8 py-14 sm:py-16'>
+    <Section className='text-white bg-blue-pattern'>
       <div className='flex max-md:flex-col max-w-screen-lg mx-auto'>
         <div className='flex-[5] flex flex-col justify-center'>
           <div className='md:pr-6 md:max-w-[40ch]'>
@@ -157,6 +158,6 @@ export function Socials() {
           </ul>
         </aside>
       </div>
-    </section>
+    </Section>
   )
 }
