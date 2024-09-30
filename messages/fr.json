@@ -1,4 +1,10 @@
 {
+  "tweets": {
+    "title": "TENEZ-VOUS AU COURANT DE CE QU'IL SE PASSE EN TEMPS RÉEL SUR LE QSMP!",
+    "desc-1": "Rejoignez notre communauté Twitter pour connaître toutes les actualités et informations concernant le QSMP! Suivez-nous et faites partie du QSMP. 🌴",
+    "desc-2": "Nous veillerons à ce que vous profitiez pleinement de l’île QSMP! 🏝️",
+    "button": "SUIVEZ-NOUS SUR TWITTER"
+  },
   "updates": {
     "title": "PERDU AVEC LE LORE DU QSMP?",
     "desc-1": "Nous sommes heureux de vous annoncer le lancement de notre chaîne YouTube QSMP Info! Il s'agit du guide parfait pour se tenir à jour concernant tous les événements et les histoires passionnantes se déroulant sur le QSMP! 🏝️",
