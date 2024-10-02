@@ -7,6 +7,7 @@ import { Inter } from 'next/font/google'
 import clsx from 'clsx'
 
 import { Tweet } from '@/lib/Tweet'
+import { ComponentProps } from 'react'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -15,13 +16,30 @@ const inter = Inter({
   display: 'swap',
 })
 
+function TweetLink({
+  children,
+  className,
+}: Pick<ComponentProps<'a'>, 'children' | 'className'>) {
+  return (
+    <ExternalLink
+      href='https://x.com/QuackityStudios'
+      colors='twitter'
+      className={className}
+    >
+      {children}
+    </ExternalLink>
+  )
+}
+
 export function Tweets() {
   const t = useTranslations('tweets')
 
   return (
     <Section className='overflow-y-hidden md:h-[36.75rem]'>
-      <div className='max-w-screen-lg mx-auto flex flex-col-reverse md:flex-row md:items-center'>
-        <div className='flex-1 md:max-h-[calc(36.75rem-8rem)] mt-10 md:mt-0'>
+      <div className='max-w-screen-lg mx-auto flex flex-col-reverse md:flex-row md:items-center gap-y-10'>
+        <TweetLink className='sm:hidden'>{t('button')}</TweetLink>
+
+        <div className='flex-1 md:max-h-[calc(36.75rem-8rem)] md:mt-0'>
           <div
             data-theme='light'
             className={clsx(
@@ -48,13 +66,8 @@ export function Tweets() {
               {t('desc-2')}
             </Paragraph>
 
-            <div className='mt-8'>
-              <ExternalLink
-                href='https://x.com/QuackityStudios'
-                colors='twitter'
-              >
-                {t('button')}
-              </ExternalLink>
+            <div className='mt-8 max-sm:hidden'>
+              <TweetLink>{t('button')}</TweetLink>
             </div>
           </div>
         </div>
