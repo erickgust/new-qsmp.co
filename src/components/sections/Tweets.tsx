@@ -44,15 +44,13 @@ export function Tweets() {
             data-theme='light'
             className={clsx(
               inter.variable,
-              'columns-1 lg:columns-2 gap-7 flex md:block justify-center',
+              'columns-1 lg:columns-2 flex md:block justify-center *:max-md:hidden [&>div:first-child]:block gap-x-7 space-y-7',
             )}
           >
             <Tweet id='1755318541778075702' />
-            <div className='max-md:hidden'>
-              <Tweet id='1749962949291081766' />
-              <Tweet id='1743678987983835566' />
-              <Tweet id='1732570074412646520' />
-            </div>
+            <Tweet id='1749962949291081766' />
+            <Tweet id='1743678987983835566' />
+            <Tweet id='1732570074412646520' />
           </div>
         </div>
 
