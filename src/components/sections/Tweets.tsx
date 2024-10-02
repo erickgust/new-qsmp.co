@@ -19,22 +19,27 @@ export function Tweets() {
   const t = useTranslations('tweets')
 
   return (
-    <Section className='overflow-y-hidden sm:h-[36.75rem]'>
-      <div className='max-w-screen-lg mx-auto flex items-center'>
-        <div className='flex-1 sm:max-h-[calc(36.75rem-8rem)]'>
+    <Section className='overflow-y-hidden md:h-[36.75rem]'>
+      <div className='max-w-screen-lg mx-auto flex flex-col-reverse md:flex-row md:items-center'>
+        <div className='flex-1 md:max-h-[calc(36.75rem-8rem)] mt-10 md:mt-0'>
           <div
             data-theme='light'
-            className={clsx(inter.variable, 'columns-1 lg:columns-2 gap-7')}
+            className={clsx(
+              inter.variable,
+              'columns-1 lg:columns-2 gap-7 flex md:block justify-center',
+            )}
           >
             <Tweet id='1755318541778075702' />
-            <Tweet id='1749962949291081766' />
-            <Tweet id='1743678987983835566' />
-            <Tweet id='1732570074412646520' />
+            <div className='max-md:hidden'>
+              <Tweet id='1749962949291081766' />
+              <Tweet id='1743678987983835566' />
+              <Tweet id='1732570074412646520' />
+            </div>
           </div>
         </div>
 
-        <div className='text-main-dark-blue flex-1 max-h-fit pl-8'>
-          <div className='max-w-sm w-fit ml-auto'>
+        <div className='text-main-dark-blue flex-1 max-h-fit md:pl-8'>
+          <div className='md:max-w-sm w-fit md:ml-auto'>
             <Heading className='mb-6'>{t('title')}</Heading>
             <Paragraph className='text-secondary-dark-grey'>
               {t('desc-1')}
