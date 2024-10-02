@@ -36,10 +36,10 @@ export function Tweets() {
 
   return (
     <Section className='overflow-y-hidden md:h-[36.75rem]'>
-      <div className='max-w-screen-lg mx-auto flex flex-col-reverse md:flex-row md:items-center gap-y-10'>
+      <div className='max-w-screen-lg mx-auto flex flex-col-reverse md:flex-row gap-y-10 max-h-full'>
         <TweetLink className='sm:hidden'>{t('button')}</TweetLink>
 
-        <div className='flex-1 md:max-h-[calc(36.75rem-8rem)] md:mt-0'>
+        <div className='flex-1 md:mt-0'>
           <div
             data-theme='light'
             className={clsx(
@@ -56,7 +56,7 @@ export function Tweets() {
           </div>
         </div>
 
-        <div className='text-main-dark-blue flex-1 max-h-fit md:pl-8'>
+        <div className='text-main-dark-blue flex-1 max-h-fit md:pl-8 md:self-center'>
           <div className='md:max-w-sm w-fit md:ml-auto'>
             <Heading className='mb-6'>{t('title')}</Heading>
             <Paragraph className='text-secondary-dark-grey'>
