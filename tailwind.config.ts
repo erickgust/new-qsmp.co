@@ -37,8 +37,10 @@ const config: Config = {
         '1.5xl': '1.375rem',
       },
       spacing: {
-        // 14,5rem = 232px
-        60: "14.5rem",
+        '4.5': '1.125rem', // 1.125rem = 18px
+        60: "14.5rem", // 14,5rem = 232px
+        75: "18.75rem", // 18.75rem = 300px
+        105: "26.25rem", // 26.25rem = 420px
       },
       fontFamily: {
         pixel: ["var(--font-pixeloid-sans)", "sans-serif"],
