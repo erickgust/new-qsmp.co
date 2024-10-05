@@ -29,6 +29,7 @@ const config: Config = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
         'blue-pattern': "url('/BG_Blue.png')",
         'purple-pattern': "url('/BG_Purple.png')",
+        'light-blue-pattern': "url('/BG_LightBlue.png')",
       },
       fontSize: {
         // 1.625rem = 26px
