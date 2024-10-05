@@ -50,6 +50,13 @@ const config: Config = {
       maxWidth: {
         'screen-lg': '1080px',
       },
+      lineClamp: {
+        8: '8',
+      },
+      ringWidth: {
+        5: '5px',
+        6: '6px',
+      }
     },
   },
   plugins: [],
