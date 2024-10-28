@@ -4,6 +4,7 @@ import { ExternalLink } from '@/components/Button'
 import { Paragraph } from '@/components/Paragraph'
 import clsx from 'clsx'
 import Image from 'next/image'
+import { PlayerInfo } from './types'
 
 type TagProps = {
   children: React.ReactNode
@@ -24,27 +25,16 @@ function Tag({ children, className }: TagProps) {
   )
 }
 
-type StreamDescriptionProps = {
-  isLive: boolean
-  description: string
-  viewCount: number
-  language: string
-  name: string
-  url: string
-  image: string
-}
+export type PlayerDescProps = PlayerInfo
 
-export function StreamDescription({
-  isLive,
-  description,
-  viewCount,
-  language,
-  name,
-  url,
-  image,
-}: StreamDescriptionProps) {
+export function PlayerDesc(props: PlayerDescProps) {
+  const { name, url, image, description, type } = props
+
+  const viewCount = 'viewCount' in props ? props.viewCount : 0
+  const language = 'language' in props ? props.language : ''
+
   return (
-    <div className='flex flex-col gap-6 p-8 bg-light-blue-pattern sm:max-w-75 sm:h-105'>
+    <div className='flex flex-col gap-6 p-8 bg-light-blue-pattern md:max-w-75 w-full'>
       <div className='flex items-center gap-4'>
         <Image src={image} width={80} height={80} className='size-10' alt='' />
         <strong className='text-main-dark-blue font-normal text-xl'>
@@ -53,8 +43,8 @@ export function StreamDescription({
       </div>
 
       <div
-        data-live={isLive}
-        className='hidden data-[live=true]:flex flex-wrap gap-2'
+        data-type={type}
+        className='hidden data-[type=livestream]:flex flex-wrap gap-2'
       >
         <Tag className='bg-main-red'>
           <span>LIVE</span>
@@ -69,16 +59,16 @@ export function StreamDescription({
         </Tag>
       </div>
 
-      <Paragraph className='text-secondary-dark-grey mb-auto'>
+      <Paragraph className='text-secondary-dark-grey mb-auto break-all line-clamp-6'>
         {description}
       </Paragraph>
 
       <ExternalLink
-        colors={isLive ? 'red' : 'purple'}
+        colors={type === 'livestream' ? 'red' : 'purple'}
         className='self-end'
         href={url}
       >
-        {isLive ? 'See live' : 'Watch video'}
+        {type === 'livestream' ? 'See live' : 'Watch video'}
       </ExternalLink>
     </div>
   )
