@@ -41,6 +41,7 @@ const config: Config = {
         '4.5': '1.125rem', // 1.125rem = 18px
         60: "14.5rem", // 14,5rem = 232px
         75: "18.75rem", // 18.75rem = 300px
+        90: "22.5rem", // 22.5rem = 360px
         105: "26.25rem", // 26.25rem = 420px
       },
       fontFamily: {
