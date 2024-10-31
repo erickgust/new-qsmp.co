@@ -34,7 +34,7 @@ export function PlayerDesc(props: PlayerDescProps) {
   const language = 'language' in props ? props.language : ''
 
   return (
-    <div className='flex flex-col gap-6 p-8 bg-light-blue-pattern md:max-w-75 w-full'>
+    <div className='hidden flex-col gap-6 p-8 bg-light-blue-pattern md:max-w-75 group-data-[selected=true]:flex w-full'>
       <div className='flex items-center gap-4'>
         <Image src={image} width={80} height={80} className='size-10' alt='' />
         <strong className='text-main-dark-blue font-normal text-xl'>
