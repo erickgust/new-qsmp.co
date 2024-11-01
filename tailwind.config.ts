@@ -57,7 +57,65 @@ const config: Config = {
       ringWidth: {
         5: '5px',
         6: '6px',
-      }
+      },
+      keyframes: {
+        showElement: {
+          '0%': {
+            display: 'none',
+            width: '0',
+            opacity: '0',
+          },
+          '1%': {
+            display: 'flex',
+            width: '0',
+            opacity: '0',
+          },
+          '100%': {
+            display: 'flex',
+            width: '100%',
+            opacity: '0',
+          },
+        },
+        fadeIn: {
+          from: {
+            opacity: '0',
+          },
+          to: {
+            opacity: '1',
+          },
+        },
+        hideElement: {
+          '0%': {
+            display: 'flex',
+            width: '100%',
+            opacity: '1',
+          },
+          '99%': {
+            display: 'flex',
+            width: '0',
+            opacity: '0',
+            padding: '0',
+          },
+          '100%': {
+            display: 'none',
+            width: '0',
+            opacity: '0',
+            padding: '0',
+          },
+        },
+        fadeOut: {
+          from: {
+            opacity: '1',
+          },
+          to: {
+            opacity: '0',
+          },
+        },
+      },
+      animation: {
+        showElement: 'showElement 700ms forwards, fadeIn 500ms 200ms forwards',
+        hideElement: 'hideElement 300ms forwards, fadeOut 150ms forwards',
+      },
     },
   },
   plugins: [],
