@@ -6,7 +6,7 @@ import { Heading } from '@/components/Heading'
 import { PlayerContainer } from './Player'
 
 import useEmblaCarousel from 'embla-carousel-react'
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { useTweenFactor } from './hooks/useTweenFactor'
 import { PlayerDesc } from './PlayerDesc'
 
@@ -16,7 +16,36 @@ export function Streams() {
     align: 'center',
   })
   const { setTweenFactor, setTweenNodes, tweenScale } = useTweenFactor(0.14)
+  const [emblaThumbsRef, emblaThumbsApi] = useEmblaCarousel({
+    containScroll: 'keepSnaps',
+    align: 'center',
+    breakpoints: {
+      '(min-width: 640px)': { align: 'start' },
+    },
+    dragFree: true,
+  })
   const [selectedIndex, setSelectedIndex] = useState(0)
+
+  const items = Array.from({ length: 10 }, () => ({
+    image: '/baghera-jones.jpg',
+    name: 'Baghera Jones',
+    url: 'https://twitch.tv/bagherajones',
+  }))
+
+  const onThumbClick = useCallback(
+    (index: number) => {
+      if (!api || !emblaThumbsApi) return
+      api.scrollTo(index)
+    },
+    [api, emblaThumbsApi],
+  )
+
+  const onSelect = useCallback(() => {
+    if (!api || !emblaThumbsApi) return
+
+    setSelectedIndex(api.selectedScrollSnap())
+    emblaThumbsApi.scrollTo(api.selectedScrollSnap())
+  }, [api, emblaThumbsApi])
 
   useEffect(() => {
     if (!api) return
@@ -25,29 +54,28 @@ export function Streams() {
     setTweenFactor(api)
     tweenScale(api)
 
-    const onSelect = () => {
-      setSelectedIndex(api.selectedScrollSnap())
-    }
-
     onSelect()
 
     api
+      .on('select', onSelect)
+      .on('reInit', onSelect)
       .on('reInit', setTweenNodes)
       .on('reInit', setTweenFactor)
       .on('reInit', tweenScale)
       .on('scroll', tweenScale)
       .on('slideFocus', tweenScale)
-      .on('select', onSelect)
-  }, [api, setTweenFactor, setTweenNodes, tweenScale])
+  }, [api, onSelect, setTweenFactor, setTweenNodes, tweenScale])
 
   return (
     <Section className='lg:!px-0'>
-      <div className='mx-auto'>
-        <Heading>watch the members pov!</Heading>
+      <div>
+        <div className='max-w-screen-lg mx-auto'>
+          <Heading>watch the members pov!</Heading>
+        </div>
 
-        <div className='overflow-hidden' ref={emblaRef}>
+        <div className='overflow-hidden my-10 sm:my-8' ref={emblaRef}>
           <div className='flex'>
-            {[...Array(5)].map((_, i) => (
+            {items.map((item, i) => (
               <div
                 key={i}
                 data-selected={selectedIndex === i}
@@ -67,16 +95,18 @@ export function Streams() {
           </div>
         </div>
 
-        <Navigation
-          items={[
-            {
-              image: '/baghera-jones.jpg',
-              name: 'Baghera Jones',
-            },
-          ]}
-          selectedIndex={0}
-          onSelectedIndex={() => {}}
-        />
+        <div className='sm:mt-6 mx-auto max-w-screen-lg'>
+          <div
+            ref={emblaThumbsRef}
+            className='overflow-hidden select-none px-1.5 -ml-1.5'
+          >
+            <Navigation
+              items={items}
+              selectedIndex={selectedIndex}
+              onSelectedIndex={onThumbClick}
+            />
+          </div>
+        </div>
       </div>
     </Section>
   )

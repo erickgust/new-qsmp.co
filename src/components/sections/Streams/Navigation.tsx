@@ -9,13 +9,17 @@ type LiveItemProps = {
 
 function LiveItem({ isSelected = false, alt, src, onClick }: LiveItemProps) {
   return (
-    <button
+    <div
       data-selected={isSelected}
-      onClick={onClick}
-      className='size-10 ring-main-red max-sm:data-[selected=true]:size-12 data-[selected=true]:ring-6 sm:data-[selected=true]:ring-5'
+      className='group min-w-0 flex-grow-0 flex-shrink-0 basis-10 max-sm:basis-12 pl-3.5 sm:pl-6 box-content flex justify-center'
     >
-      <Image src={src} alt={alt} width={80} height={80} />
-    </button>
+      <button
+        onClick={onClick}
+        className='ring-main-red group-data-[selected=true]:ring-6 sm:group-data-[selected=true]:ring-5 size-10 max-sm:group-data-[selected=true]:size-12 shrink-0'
+      >
+        <Image src={src} alt={alt} width={80} height={80} quality={100} />
+      </button>
+    </div>
   )
 }
 
@@ -34,10 +38,10 @@ export function Navigation({
   onSelectedIndex,
 }: NavigationProps) {
   return (
-    <div className='flex gap-x-5 sm:gap-x-6 items-center'>
+    <div className='flex py-1.5 -ml-5 sm:-ml-6 items-center'>
       {items.map((stream, index) => (
         <LiveItem
-          key={stream.name}
+          key={index}
           alt={stream.name}
           src={stream.image}
           isSelected={selectedIndex === index}
