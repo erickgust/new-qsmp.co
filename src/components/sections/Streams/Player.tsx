@@ -1,17 +1,13 @@
-import { PlayerDesc } from './PlayerDesc'
+type PlayerContainerProps = {
+  children?: React.ReactNode | React.ReactNode[]
+}
 
-export function Player() {
+export function PlayerContainer({ children }: PlayerContainerProps) {
   return (
-    <div data-js='slide' className='flex flex-col gap-6 my-10 md:flex-row'>
+    <div data-js='slide' className='flex flex-col gap-6 md:flex-row'>
       <div className='bg-main-red aspect-video w-full lg:max-h-105' />
 
-      <PlayerDesc
-        description='AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'
-        image='/baghera-jones.jpg'
-        type='video'
-        name='Baghera Jones'
-        url='https://twitch.tv/bagherajones'
-      />
+      {children}
     </div>
   )
 }

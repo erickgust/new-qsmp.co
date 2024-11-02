@@ -3,11 +3,12 @@
 import { Section } from '@/components/Section'
 import { Navigation } from './Navigation'
 import { Heading } from '@/components/Heading'
-import { Player } from './Player'
+import { PlayerContainer } from './Player'
 
 import useEmblaCarousel from 'embla-carousel-react'
 import { useEffect, useState } from 'react'
 import { useTweenFactor } from './hooks/useTweenFactor'
+import { PlayerDesc } from './PlayerDesc'
 
 export function Streams() {
   const [emblaRef, api] = useEmblaCarousel({
@@ -52,7 +53,15 @@ export function Streams() {
                 data-selected={selectedIndex === i}
                 className='group min-w-0 flex-grow-0 flex-shrink-0 basis-full lg:basis-[1080px] select-none'
               >
-                <Player />
+                <PlayerContainer>
+                  <PlayerDesc
+                    image={item.image}
+                    name={item.name}
+                    url={item.url}
+                    type='video'
+                    description='AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'
+                  />
+                </PlayerContainer>
               </div>
             ))}
           </div>
