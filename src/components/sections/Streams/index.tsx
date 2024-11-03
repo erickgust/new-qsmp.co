@@ -68,9 +68,22 @@ export function Streams() {
 
   return (
     <Section className='lg:!px-0'>
-      <div>
-        <div className='max-w-screen-lg mx-auto'>
+      <div className='flex flex-col'>
+        <div className='max-w-screen-lg w-full lg:mx-8 self-center'>
           <Heading>watch the members pov!</Heading>
+        </div>
+
+        <div className='max-w-screen-lg w-full lg:mx-8 self-center md:mt-6 max-md:order-last'>
+          <div
+            ref={emblaThumbsRef}
+            className='overflow-hidden select-none px-1.5 -ml-1.5'
+          >
+            <Navigation
+              items={items}
+              selectedIndex={selectedIndex}
+              onSelectedIndex={onThumbClick}
+            />
+          </div>
         </div>
 
         <div className='overflow-hidden my-10 sm:my-8' ref={emblaRef}>
@@ -92,19 +105,6 @@ export function Streams() {
                 </PlayerContainer>
               </div>
             ))}
-          </div>
-        </div>
-
-        <div className='sm:mt-6 mx-auto max-w-screen-lg'>
-          <div
-            ref={emblaThumbsRef}
-            className='overflow-hidden select-none px-1.5 -ml-1.5'
-          >
-            <Navigation
-              items={items}
-              selectedIndex={selectedIndex}
-              onSelectedIndex={onThumbClick}
-            />
           </div>
         </div>
       </div>
