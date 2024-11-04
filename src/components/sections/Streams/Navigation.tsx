@@ -1,4 +1,7 @@
+'use client'
+
 import Image from 'next/image'
+import { useCarousel } from './Carousel'
 
 type LiveItemProps = {
   isSelected?: boolean
@@ -28,15 +31,11 @@ type NavigationProps = {
     name: string
     image: string
   }[]
-  selectedIndex: number
-  onSelectedIndex: (index: number) => void
 }
 
-export function Navigation({
-  items,
-  selectedIndex,
-  onSelectedIndex,
-}: NavigationProps) {
+export function Navigation({ items }: NavigationProps) {
+  const { selectedIndex, onThumbClick } = useCarousel()
+
   return (
     <div className='flex py-1.5 -ml-5 sm:-ml-6 items-center'>
       {items.map((stream, index) => (
@@ -45,7 +44,7 @@ export function Navigation({
           alt={stream.name}
           src={stream.image}
           isSelected={selectedIndex === index}
-          onClick={() => onSelectedIndex(index)}
+          onClick={() => onThumbClick(index)}
         />
       ))}
     </div>
