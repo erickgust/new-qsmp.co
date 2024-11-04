@@ -77,10 +77,10 @@ export function Streams() {
           <Heading>watch the members pov!</Heading>
         </div>
 
-        <div className='max-w-screen-lg w-full lg:mx-8 self-center md:mt-6 max-md:order-last relative'>
+        <div className='max-w-screen-lg w-full lg:mx-8 self-center md:mt-6 max-md:order-last relative px-10 md:px-0 flex max-md:justify-center items-center'>
           <div
             ref={emblaThumbsRef}
-            className='overflow-hidden select-none px-1.5 -ml-1.5'
+            className='overflow-hidden select-none px-3 md:px-1.5 md:-ml-1.5'
           >
             <Navigation
               items={items}
