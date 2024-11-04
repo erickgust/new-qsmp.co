@@ -187,6 +187,23 @@ export function IconLink({ icon, colors, size, ...props }: IconLinkProps) {
   )
 }
 
+interface IconButtonProps
+  extends ComponentProps<'button'>,
+    VariantProps<typeof button> {
+  icon: React.ReactNode
+}
+
+export function IconButton({ icon, colors, size, ...props }: IconButtonProps) {
+  return (
+    <button
+      {...props}
+      className={cx(button({ colors, intent: 'icon', size }), props.className)}
+    >
+      <span>{icon}</span>
+    </button>
+  )
+}
+
 interface ChannelLinkProps
   extends ComponentProps<'a'>,
     VariantProps<typeof button> {

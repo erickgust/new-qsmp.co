@@ -9,6 +9,8 @@ import useEmblaCarousel from 'embla-carousel-react'
 import { useCallback, useEffect, useState } from 'react'
 import { useTweenFactor } from './hooks/useTweenFactor'
 import { PlayerDesc } from './PlayerDesc'
+import { IconButton } from '@/components/Button'
+import { ArrowForward } from '@/assets/icons/ArrowForward'
 
 export function Streams() {
   const [emblaRef, api] = useEmblaCarousel({
@@ -73,7 +75,7 @@ export function Streams() {
           <Heading>watch the members pov!</Heading>
         </div>
 
-        <div className='max-w-screen-lg w-full lg:mx-8 self-center md:mt-6 max-md:order-last'>
+        <div className='max-w-screen-lg w-full lg:mx-8 self-center md:mt-6 max-md:order-last relative'>
           <div
             ref={emblaThumbsRef}
             className='overflow-hidden select-none px-1.5 -ml-1.5'
@@ -84,6 +86,17 @@ export function Streams() {
               onSelectedIndex={onThumbClick}
             />
           </div>
+
+          <IconButton
+            icon={<ArrowForward className='rotate-180' />}
+            className='absolute left-0 z-10 md:-bottom-56 lg:-bottom-64 bottom-1/2 max-md:translate-y-1/2 md:translate-x-4 min-[1200px]:-translate-x-14'
+            colors='dark'
+          />
+          <IconButton
+            icon={<ArrowForward />}
+            className='absolute right-0 z-10 md:-bottom-56 lg:-bottom-64 bottom-1/2 max-md:translate-y-1/2 md:-translate-x-4 min-[1200px]:translate-x-14'
+            colors='dark'
+          />
         </div>
 
         <div className='overflow-hidden my-10 sm:my-8' ref={emblaRef}>
