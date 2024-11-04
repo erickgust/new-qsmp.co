@@ -11,6 +11,7 @@ import { useTweenFactor } from './hooks/useTweenFactor'
 import { PlayerDesc } from './PlayerDesc'
 import { IconButton } from '@/components/Button'
 import { ArrowForward } from '@/assets/icons/ArrowForward'
+import { usePrevNextButtons } from './hooks/usePrevNextButtons'
 
 export function Streams() {
   const [emblaRef, api] = useEmblaCarousel({
@@ -27,6 +28,7 @@ export function Streams() {
     dragFree: true,
   })
   const [selectedIndex, setSelectedIndex] = useState(0)
+  const { onPrevButtonClick, onNextButtonClick } = usePrevNextButtons(api)
 
   const items = Array.from({ length: 10 }, () => ({
     image: '/baghera-jones.jpg',
@@ -91,11 +93,13 @@ export function Streams() {
             icon={<ArrowForward className='rotate-180' />}
             className='absolute left-0 z-10 md:-bottom-56 lg:-bottom-64 bottom-1/2 max-md:translate-y-1/2 md:translate-x-4 min-[1200px]:-translate-x-14'
             colors='dark'
+            onClick={onPrevButtonClick}
           />
           <IconButton
             icon={<ArrowForward />}
             className='absolute right-0 z-10 md:-bottom-56 lg:-bottom-64 bottom-1/2 max-md:translate-y-1/2 md:-translate-x-4 min-[1200px]:translate-x-14'
             colors='dark'
+            onClick={onNextButtonClick}
           />
         </div>
 
