@@ -103,7 +103,7 @@ export function Streams() {
           />
         </div>
 
-        <div className='overflow-hidden my-10 sm:my-8' ref={emblaRef}>
+        <div className='overflow-hidden my-10 sm:my-8 md:mb-0' ref={emblaRef}>
           <div className='flex'>
             {items.map((item, i) => (
               <div
