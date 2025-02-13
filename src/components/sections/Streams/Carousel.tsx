@@ -46,7 +46,7 @@ type CarouselProps = {
 export function Carousel({ children }: CarouselProps) {
   const [emblaRef, api] = useEmblaCarousel({
     loop: true,
-    align: 'center',
+    // align: 'center',
   })
   const { setTweenFactor, setTweenNodes, tweenScale } = useTweenFactor(0.14)
   const [emblaThumbsRef, emblaThumbsApi] = useEmblaCarousel({
@@ -149,7 +149,7 @@ export function CarouselItem({
   return (
     <div
       data-selected={selectedIndex === index}
-      className='group min-w-0 flex-grow-0 flex-shrink-0 basis-full lg:basis-[1080px] select-none'
+      className='group min-w-0 flex-grow-0 flex-shrink-0 basis-full lg:basis-[1080px] select-none transform-gpu'
     >
       {children}
     </div>

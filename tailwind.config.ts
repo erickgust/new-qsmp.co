@@ -20,7 +20,7 @@ const config: Config = {
       secondary: {
         'dark-grey': '#535170',
         'light-grey': '#EEEEEE',
-      }
+      },
     },
     extend: {
       backgroundImage: {
@@ -33,20 +33,20 @@ const config: Config = {
       },
       fontSize: {
         // 1.625rem = 26px
-        "2.5xl": "1.625rem",
+        '2.5xl': '1.625rem',
         // 1.375rem = 22px
         '1.5xl': '1.375rem',
       },
       spacing: {
         '4.5': '1.125rem', // 1.125rem = 18px
-        60: "14.5rem", // 14,5rem = 232px
-        75: "18.75rem", // 18.75rem = 300px
-        90: "22.5rem", // 22.5rem = 360px
-        105: "26.25rem", // 26.25rem = 420px
+        60: '14.5rem', // 14,5rem = 232px
+        75: '18.75rem', // 18.75rem = 300px
+        90: '22.5rem', // 22.5rem = 360px
+        105: '26.25rem', // 26.25rem = 420px
       },
       fontFamily: {
-        pixel: ["var(--font-pixeloid-sans)", "sans-serif"],
-        inter: ["var(--font-inter)", "sans-serif"],
+        pixel: ['var(--font-pixeloid-sans)', 'sans-serif'],
+        inter: ['var(--font-inter)', 'sans-serif'],
       },
       maxWidth: {
         'screen-lg': '1080px',
@@ -60,20 +60,15 @@ const config: Config = {
       },
       keyframes: {
         showElement: {
-          '0%': {
-            display: 'none',
+          from: {
             width: '0',
             opacity: '0',
+            marginLeft: '0',
           },
-          '1%': {
-            display: 'flex',
-            width: '0',
-            opacity: '0',
-          },
-          '100%': {
-            display: 'flex',
+          to: {
             width: '100%',
             opacity: '0',
+            marginLeft: '1.5rem',
           },
         },
         fadeIn: {
@@ -85,22 +80,15 @@ const config: Config = {
           },
         },
         hideElement: {
-          '0%': {
-            display: 'flex',
+          from: {
             width: '100%',
-            opacity: '1',
+            opacity: '0',
+            marginLeft: '1.5rem',
           },
-          '99%': {
-            display: 'flex',
+          to: {
             width: '0',
             opacity: '0',
-            padding: '0',
-          },
-          '100%': {
-            display: 'none',
-            width: '0',
-            opacity: '0',
-            padding: '0',
+            marginLeft: '0',
           },
         },
         fadeOut: {

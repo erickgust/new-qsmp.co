@@ -36,46 +36,58 @@ export function PlayerDesc(props: PlayerDescProps) {
   return (
     <div
       className={clsx(
-        'max-lg:flex flex-col gap-6 p-8 bg-light-blue-pattern md:max-w-75 w-full overflow-hidden',
+        'w-full md:max-w-75 ml-6',
         'lg:group-data-[selected=true]:animate-showElement',
         'lg:group-data-[selected=false]:animate-hideElement',
       )}
     >
-      <div className='flex items-center gap-4'>
-        <Image src={image} width={80} height={80} className='size-10' alt='' />
-        <strong className='text-main-dark-blue font-normal text-xl'>
-          {name}
-        </strong>
-      </div>
-
       <div
-        data-type={type}
-        className='hidden data-[type=livestream]:flex flex-wrap gap-2'
+        className={clsx(
+          'flex flex-col gap-6 p-8 bg-light-blue-pattern w-full h-full overflow-hidden box-border',
+        )}
       >
-        <Tag className='bg-main-red'>
-          <span>LIVE</span>
-        </Tag>
-        <Tag className='bg-main-dark-blue'>
-          <GroupIcon />
-          <span>{viewCount}</span>
-        </Tag>
-        <Tag className='bg-main-dark-blue'>
-          <LanguageIcon />
-          <span>{language}</span>
-        </Tag>
+        <div className='flex items-center gap-4'>
+          <Image
+            src={image}
+            width={80}
+            height={80}
+            className='size-10'
+            alt=''
+          />
+          <strong className='text-main-dark-blue font-normal text-xl'>
+            {name}
+          </strong>
+        </div>
+
+        <div
+          data-type={type}
+          className='hidden data-[type=livestream]:flex flex-wrap gap-2'
+        >
+          <Tag className='bg-main-red'>
+            <span>LIVE</span>
+          </Tag>
+          <Tag className='bg-main-dark-blue'>
+            <GroupIcon />
+            <span>{viewCount}</span>
+          </Tag>
+          <Tag className='bg-main-dark-blue'>
+            <LanguageIcon />
+            <span>{language}</span>
+          </Tag>
+        </div>
+
+        <Paragraph className='text-secondary-dark-grey mb-auto break-all line-clamp-6'>
+          {description}
+        </Paragraph>
+
+        <ExternalLink
+          colors={type === 'livestream' ? 'red' : 'purple'}
+          className='self-end'
+          href={url}
+        >
+          {type === 'livestream' ? 'See live' : 'Watch video'}
+        </ExternalLink>
       </div>
-
-      <Paragraph className='text-secondary-dark-grey mb-auto break-all line-clamp-6'>
-        {description}
-      </Paragraph>
-
-      <ExternalLink
-        colors={type === 'livestream' ? 'red' : 'purple'}
-        className='self-end'
-        href={url}
-      >
-        {type === 'livestream' ? 'See live' : 'Watch video'}
-      </ExternalLink>
     </div>
   )
 }
