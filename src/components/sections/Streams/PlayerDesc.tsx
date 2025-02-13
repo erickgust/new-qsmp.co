@@ -36,7 +36,7 @@ export function PlayerDesc(props: PlayerDescProps) {
   return (
     <div
       className={clsx(
-        'w-full md:max-w-75 ml-6',
+        'w-full md:max-w-75 mt-6 lg:mt-0',
         'lg:group-data-[selected=false]:w-0 lg:group-data-[selected=false]:ml-0',
         'lg:group-data-[selected=true]:w-full lg:group-data-[selected=true]:ml-6',
         'lg:group-data-[selected=true]:transition-all lg:group-data-[selected=true]:duration-700',
