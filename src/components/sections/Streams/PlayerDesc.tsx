@@ -37,13 +37,17 @@ export function PlayerDesc(props: PlayerDescProps) {
     <div
       className={clsx(
         'w-full md:max-w-75 ml-6',
-        'lg:group-data-[selected=true]:animate-showElement',
-        'lg:group-data-[selected=false]:animate-hideElement',
+        'lg:group-data-[selected=false]:w-0 lg:group-data-[selected=false]:ml-0',
+        'lg:group-data-[selected=true]:w-full lg:group-data-[selected=true]:ml-6',
+        'lg:group-data-[selected=true]:transition-all lg:group-data-[selected=true]:duration-700',
+        'lg:group-data-[selected=false]:transition-all lg:group-data-[selected=false]:duration-300',
       )}
     >
       <div
         className={clsx(
           'flex flex-col gap-6 p-8 bg-light-blue-pattern w-full h-full overflow-hidden box-border',
+          'lg:group-data-[selected=false]:opacity-0 lg:group-data-[selected=false]:transition-opacity',
+          'lg:group-data-[selected=true]:opacity-100 lg:group-data-[selected=true]:transition-opacity lg:group-data-[selected=true]:duration-500 lg:group-data-[selected=true]:delay-200',
         )}
       >
         <div className='flex items-center gap-4'>

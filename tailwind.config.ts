@@ -58,52 +58,6 @@ const config: Config = {
         5: '5px',
         6: '6px',
       },
-      keyframes: {
-        showElement: {
-          from: {
-            width: '0',
-            opacity: '0',
-            marginLeft: '0',
-          },
-          to: {
-            width: '100%',
-            opacity: '0',
-            marginLeft: '1.5rem',
-          },
-        },
-        fadeIn: {
-          from: {
-            opacity: '0',
-          },
-          to: {
-            opacity: '1',
-          },
-        },
-        hideElement: {
-          from: {
-            width: '100%',
-            opacity: '0',
-            marginLeft: '1.5rem',
-          },
-          to: {
-            width: '0',
-            opacity: '0',
-            marginLeft: '0',
-          },
-        },
-        fadeOut: {
-          from: {
-            opacity: '1',
-          },
-          to: {
-            opacity: '0',
-          },
-        },
-      },
-      animation: {
-        showElement: 'showElement 700ms forwards, fadeIn 500ms 200ms forwards',
-        hideElement: 'hideElement 300ms forwards, fadeOut 150ms forwards',
-      },
     },
   },
   plugins: [],
